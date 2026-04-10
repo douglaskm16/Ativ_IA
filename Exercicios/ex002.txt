@@ -1,0 +1,96 @@
+1) Conceitual - Importância da Preparação
+
+   A preparação de dados melhora a qualidade, adequa o formato para as limitações dos algoritmos e reduz a complexidade do
+   problema, e assim garante que a ia tenha uma boa performance.
+
+
+
+2) Valores Ausentes
+
+a) Remover registros ausentes, remover a variável caso ela não seja tão importante, preencher com média ou mediana.
+b) Remover registros é inadequado quando sua ausencia faria muita diferença no tamanho da base, podendo causar perda de 
+   informação.
+
+
+
+3) Normalização vs Padronização
+
+   A normalização transforma os valores para um intervalo fixo, geralmente entre 0 e 1.
+   Já a padronização transforma os dados para média 0 e desvio padrão 1.
+  
+   Ambas são recomendados para algoritmos baseados em distância como o KNN, pois evita que atributos com números muito
+   grandes dominem o cálculo de distância e distorçam o aprendizado.
+  
+
+
+4) Dados Categóricos
+
+a) É possível usar Codificação One-hot, como o clima é um atributo nominal, essa técnica cria um pseudo-atributo binário
+   para cada valor possível.
+b) O principal problema é que a codificação numérica simples impõe uma relação de ordem inexistente entre as categorias, e
+   Isso pode induzir o modelo ao erro.
+
+
+
+5) Overfitting e Separacao de Dados
+  
+   A divisão do conjunto de dados em treino, validação e teste é essencial em tarefas preditivas para garantir que o
+   modelo aprenda padrões e não apenas decore os exemplos.
+   Se o conjunto de teste for utilizado durante o treino, o resultado será falso, pois os exemplos usados já teriam sido
+   vistos anteriormente.
+
+
+
+6) Balanceamento de Classes
+
+a) Por estar muito desbalanceado o modelo tende a dar preferencia a classe majoritária, que é a A com 95%. o algoritmo
+   pode simplesmente aprender a prever sempre a classe A
+b) Oversampling e Undersampling.
+
+
+
+7) Detecção de Outliers
+
+a) Os outliers são valores muito diferentes dos demais observados ou casos atípicos que se encontram fora da distribuição
+   esperada para aquele conjunto de dados.
+b) A remoção pode ser prejudicial quando os outliers não são de erros de aquisição, e sim fenômenos reais
+   do problema.
+c) Um método envolve o uso de técnicas estatísticas para identificar valores que distorcem medidas de posição e dispersão,
+   como o desvio padrão.
+
+
+
+8) Feature Engineering
+
+   Criar a variável idade a partir de data_nascimento é melhor, pois ao invés de entregar um dado bruto dá a informação
+   de forma mais direta.
+
+
+
+9) Pipeline de Pré-processamento
+   
+   -Limpeza de Dados
+   -Conversão de Dados Categóricos(One-hot)
+   -Normalização
+   -Balanceamento de Classes(é possível usar SMOTE)
+
+
+
+10) Estudo de Caso Aplicado
+
+   Etapas:
+
+   1- Limpeza de dados: Tratar valores ausentes em variáveis como renda_mensal ou idade, optando pela remoção das
+      instâncias ou preenchimento automático (ex: usar a média para renda).
+
+   2- Conversão de Dados Categóricos: Transformar a variável estado_civil (nominal) através da Codificação One-hot.
+
+   3- normalização: Para evitar que atributos com grandes números dominem, deve reescalar os valores. usando técnicas
+      como Z-score e min-max.
+
+   4- Seleção de atributos:  Avaliar se todos os atributos são relevantes ou se tem redundâncias.
+
+   5- Balanceamento de Classes: Se o histórico mostrar que poucas pessoas tem o crédito negado (classe minoritária),
+      aplicar técnicas como Oversampling ou Undersampling para equilibrar as classes.
+
+   6- Dividir o Dataset: separar os dados transformados em conjuntos disjuntos de treino, validação e teste.

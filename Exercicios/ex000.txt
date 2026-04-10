@@ -1,0 +1,11 @@
+Aplicativo mobile para agricultores detectarem doenças e pragas em plantações, reduzindo perdas na produção.
+
+
+A IA analisa imagens das plantas para identificar doenças e pragas automaticamente.
+
+Entrada: fotos das plantas tiradas pelo usuário e dados climáticos (temperatura, umidade, previsão do tempo).
+Saída: diagnóstico da doença/praga, nível de risco e recomendações (ex: uso de defensivos, irrigação).
+
+Técnica provável: Visão e Classificação de imagens.
+
+Métrica de sucesso: identificação correta das doenças, medida pela porcentagem de acertos.
